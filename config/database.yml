@@ -1,0 +1,7 @@
+development:
+  adapter: postgresql
+  database: line_dancing
+
+test:
+  adapter: postgresql
+  database: line_dancing_test

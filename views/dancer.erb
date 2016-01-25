@@ -1,0 +1,28 @@
+<div class="row">
+  <div class="col-xs-12">
+    <div class="panel">
+      <h1><%= @dancer.name() %></h1>
+      <% if !@team.nil? %>
+        <h3>Division: <a href="/teams/<%= @team.id %>"><%= @team.name %></a></h3>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+
+  <h3>Update Info</h3>
+  <form class="" action="/dancers/<%= @dancer.id %>/update" method="post">
+    <input type="hidden" value="patch" name="_method">
+    <label for="dancer_name">Name</label>
+    <input type="text" name="dancer_name">
+    <select name="team" class="form-control">
+      <% @teams.each do |team| %>
+        <% if team == @dancer.team %>
+          <option value="<%= team.id %>" selected><%= team.name %></option>
+        <% else %>
+          <option value="<%= team.id %>"><%= team.name %></option>
+        <% end %>
+      <% end %>
+    </select>
+    <button type="submit">Update dancer</button>
+  </form>

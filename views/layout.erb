@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha256-7s5uDGW3AHqw6xtJmNNtr+OBRJUlgkNJEo78P4b0yRw= sha512-nNo+yCHEyn0smMxSswnf/OnX6/KwJuZTlNZBjauKhTK0c+zT+q5JOCx0UFhXQ6rJR9jg6Es8gPuD2uZcYDLqSw==" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha256-KXn5puMvxCw+dAYznun+drMdG1IFl3agK0p/pqT9KAo= sha512-2e8qq0ETcfWRI4HJBzQiA3UoyFk6tbNyG+qSaIBZLyW9Xf3sWZHN/lxe9fTh1U45DpPf07yj94KsUHHWe4Yk1A==" crossorigin="anonymous"></script>
+    <script src="jquery.vide.min.js"></script>
+    <link rel="stylesheet" href="main.css">
+    <title>Line Dancing</title>
+  </head>
+  <body>
+    <div class="col-xs-12" style="height: 100vh;"
+      data-vide-bg="line_dance.webm" resizing="true" data-vide-options="loop: false, muted: false, playbackRate: 0.5">
+      <div class="container">
+        <div class="page-header">
+          <h1><a href="/">Line Dancing International</a></h1>
+        </div>
+
+        <%= yield %>
+      </div>
+    </div>
+  </body>
+</html>
