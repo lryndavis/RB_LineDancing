@@ -66,3 +66,24 @@ delete '/teams/:id/delete' do
   Team.delete(id)
   redirect '/'
 end
+
+patch '/teams/:id/update' do
+  Team.find(params[:id].to_i).update({name: params[:team_name]})
+  redirect "/teams/#{params[:id].to_i}"
+end
+
+patch '/teams/:id/update_coordinator' do
+  team = Team.find(params[:id].to_i)
+  dancer = Dancer.find(params[:dancer_id].to_i)
+  team.update({coordinator: dancer.id})
+  dancer.update({coordinator: true})
+  redirect "/teams/#{params[:id].to_i}"
+end
+
+delete '/teams/:id/remove_coordinator' do
+  team = Team.find(params[:id].to_i)
+  dancer = Dancer.find(params[:dancer_id].to_i)
+  team.update({coordinator: nil})
+  dancer.update({coordinator: false})
+  redirect "/teams/#{params[:id].to_i}"
+end

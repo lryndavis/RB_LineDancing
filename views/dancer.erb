@@ -2,6 +2,9 @@
   <div class="col-xs-12">
     <div class="panel">
       <h1><%= @dancer.name() %></h1>
+      <% if @dancer.coordinator %>
+        <h3>Coordinator of: <%= @dancer.team.name %></h3>
+      <% end %>
       <% if !@team.nil? %>
         <h3>Division: <a href="/teams/<%= @team.id %>"><%= @team.name %></a></h3>
       <% end %>
